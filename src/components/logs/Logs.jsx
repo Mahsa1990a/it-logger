@@ -28,9 +28,17 @@ const Logs = () => {
   }
 
   return (
-    <div>
-      
-    </div>
+    //collection is a class
+    <ul className="collection-with-header">
+      <li className="collection-header">
+        <h4 className="center">System Logs</h4>
+      </li>
+      {/* We wanna map through our logs and output a list item: */}
+      { !loading && logs.length === 0 ?   //if it's not loading(it's done loading) and there is no logs
+        (<p className="center">No Logs To Show...!</p>) : 
+        (logs.map(log => <li>{log.message}</li>))
+      }
+    </ul>
   )
 }
 
