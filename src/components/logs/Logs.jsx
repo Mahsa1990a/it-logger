@@ -7,6 +7,11 @@ const Logs = () => {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => { // Using useEffect for calling getLogs() once after loading App
+    getLogs();
+    // eslint-disable-next-line
+  }, []); // We only want to run them once so => []
+
   const getLogs = async () => {
     setLoading(true);
     // Make a request from backend(using fetch instead of axios):
