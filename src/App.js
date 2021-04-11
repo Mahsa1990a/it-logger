@@ -1,5 +1,6 @@
 import React, { Fragment ,useEffect } from "react";
 import Searchbar from "./components/layout/Searchbar";
+import Logs from "./components/logs/Logs";
 
 // Materialize:
 import 'materialize-css/dist/css/materialize.min.css'; //import materialize
@@ -17,6 +18,9 @@ const App = () => {
   return (
     <Fragment>
       <Searchbar />
+      <div className="container">
+        <Logs />
+      </div>
     </Fragment>
   );
 }
