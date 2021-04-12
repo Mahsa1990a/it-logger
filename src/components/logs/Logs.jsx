@@ -1,6 +1,7 @@
 //useState: because we're gonna store the logs in our component level state and later we'll move it to redux
 // useEffect: we wanna be able to make our request
 import React, { useState, useEffect } from 'react'; 
+import LogItem from "./LogItem";
 
 const Logs = () => {
 
@@ -37,7 +38,8 @@ const Logs = () => {
       {/* We wanna map through our logs and output a list item: */}
       { !loading && logs.length === 0 ?   //if it's not loading(it's done loading) and there is no logs
         (<p className="center">No Logs To Show...!</p>) : 
-        (logs.map(log => <li>{log.message}</li>))
+        // (logs.map(log => <li>{log.message}</li>)) So we wanna output LogItem:
+        (logs.map(log => <LogItem key={log.id} log={log}/>))
       }
     </ul>
   )
