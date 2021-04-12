@@ -5,7 +5,7 @@ const LogItem = ({ log }) => {
   return (
     <li className="collection-item">
       <div>
-        <a href="message">{log.message}</a>
+        <a href="#edit-log-model" className={`modal-trigger ${log.attention ? 'red-text' : 'blue-text'}`}>{log.message}</a>
       </div>
     </li>
   )
