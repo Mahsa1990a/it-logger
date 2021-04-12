@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 const LogItem = ({ log }) => {
   return (
-    <div>
-      
-    </div>
+    <li className="collection-item">
+      <div>
+        <a href="">{log.message}</a>
+      </div>
+    </li>
   )
 };
 
