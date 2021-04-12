@@ -15,11 +15,12 @@ const Logs = () => {
   const getLogs = async () => {
     setLoading(true);
     // Make a request from backend(using fetch instead of axios):
-    const res = await fetch('/logs'); //fetch returns a promiss // becuase we added proxy we dont need to say http://localhost:5000/logs
+    const res = await fetch('http://localhost:5000/logs'); //fetch returns a promiss // becuase we added proxy we dont need to say http://localhost:5000/logs
     // Id doesnt return data right away, we have to format it as json:
     const data = await res.json();
+    console.log("data", data);
 
-    setLogs(data); // Set the logs to data
+    setLogs(data); // Set the logs to data //store "logs" from db.json to state
     setLoading(false);
   };
 
@@ -29,7 +30,7 @@ const Logs = () => {
 
   return (
     //collection is a class
-    <ul className="collection-with-header">
+    <ul className="collection with-header">
       <li className="collection-header">
         <h4 className="center">System Logs</h4>
       </li>
