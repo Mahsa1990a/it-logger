@@ -7,6 +7,12 @@ const LogItem = ({ log }) => {
     <li className="collection-item">
       <div>
         <a href="#edit-log-model" className={`modal-trigger ${log.attention ? 'red-text' : 'blue-text'}`}>{log.message}</a>
+        <br/>
+        <span className="grey-text">
+          <span className="black-text">ID #{log.id}</span>
+          last updated by {' '}
+          <span className="black-text">{log.tech}</span>
+        </span>
       </div>
     </li>
   )
