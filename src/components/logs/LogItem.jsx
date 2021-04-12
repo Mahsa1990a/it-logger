@@ -5,7 +5,7 @@ const LogItem = ({ log }) => {
   return (
     <li className="collection-item">
       <div>
-        <a href="">{log.message}</a>
+        <a href="message">{log.message}</a>
       </div>
     </li>
   )
