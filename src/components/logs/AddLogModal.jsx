@@ -1,5 +1,9 @@
 // This is gonna be a form so we'll have some component level state
 import React, { useState } from 'react';
+import { connect } from "react-redux";
+import PropTypes from 'prop-types';
+import { addLog } from "../../actions/logActions";
+
 import M from 'materialize-css/dist/js/materialize.min.js'; // For alert
 
 const AddLogModal = () => {
