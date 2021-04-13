@@ -32,6 +32,11 @@ export default(state = initialState, action) => {
         ...state,
         current: action.payload
       };
+    case CLEAR_CURRENT:
+      return {
+        ...state,
+        current: null
+      };
     case LOGS_ERROR:
       console.error(action.payload)
       return {
