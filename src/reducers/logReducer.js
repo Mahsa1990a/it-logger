@@ -21,6 +21,11 @@ export default(state = initialState, action) => {
         logs: [...state.logs, action.payload],
         loading: false
       };
+    case UPDATE_LOG:
+      return {
+        ...state,
+        logs: state.logs.map(log => log.id === action.payload.id ? action.payload : log)
+      };
     case DELETE_LOG:
       return {
         ...state,
