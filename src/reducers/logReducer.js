@@ -21,6 +21,12 @@ export default(state = initialState, action) => {
         ...state,
         error: action.payload
       };
+    case GET_LOGS:
+      return {
+        ...state,
+        logs: action.payload,
+        loading: false
+      };
     default:
       return state;
   }
