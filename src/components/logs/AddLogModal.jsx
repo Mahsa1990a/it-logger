@@ -1,5 +1,6 @@
 // This is gonna be a form so we'll have some component level state
 import React, { useState } from 'react';
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 const AddLogModal = () => {
 
@@ -8,7 +9,12 @@ const AddLogModal = () => {
   const [tech, setTech] = useState('');
 
   const onSubmit = () => {
-    console.log(message, tech, attention);
+    // Error checking:
+    if(message === '' || tech === '') {
+      M.toast({ html: 'Please enter a message and tech' })
+    } else {
+      console.log(message, tech, attention);
+    }
   };
 
   return (
@@ -50,7 +56,7 @@ const AddLogModal = () => {
       </div>
 
       <div className="modal-footer">
-        <a href="#!" onClick={onSubmit} className="modal-close waves-effect waves-green btn-flat" >Enter</a>
+        <a href="#!" onClick={onSubmit} className="modal-close waves-effect waves-light blue btn" >Enter</a>
       </div>
     </div>
   )
