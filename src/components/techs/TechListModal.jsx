@@ -1,6 +1,7 @@
 //useState: because we're gonna store the logs in our component level state and later we'll move it to redux
 // useEffect: we wanna be able to make our request
 import React, { useState, useEffect } from 'react'; 
+import TechItem from "./TechItem";
 
 const TechListModal = () => {
 
@@ -32,7 +33,7 @@ const TechListModal = () => {
         <ul className="collection">
           {/* When the loading is done, map through techs: */}
           {!loading && techs.map(tech => (
-            <li className="collection-item">{tech.firstName}</li>
+            <TechItem key={tech.id} tech={tech} />
           ))}
         </ul>
       </div>
