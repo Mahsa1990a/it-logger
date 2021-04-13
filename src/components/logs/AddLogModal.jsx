@@ -7,6 +7,10 @@ const AddLogModal = () => {
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState('');
 
+  const onSubmit = () => {
+    console.log(message, tech, attention);
+  };
+
   return (
     // It's gonna be a modal so div will have id which this id is match with href of add btn in the AddBtn.jsx:
     <div id='add-log-modal' className="modal" style={modalStyle}>
