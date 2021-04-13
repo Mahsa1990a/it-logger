@@ -21,8 +21,8 @@ export const getLogs = () => async dispatch => {
   try {
     setLoading();
   
-    const res = await fetch('/logs');
-    const data = res.json();
+    const res = await fetch('http://localhost:5000/logs');
+    const data = await res.json();
   
     dispatch({
       type: GET_LOGS,
@@ -31,7 +31,7 @@ export const getLogs = () => async dispatch => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data
+      payload: err.message
     });
   }
 
