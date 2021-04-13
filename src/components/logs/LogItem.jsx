@@ -5,6 +5,11 @@ import PropTypes from 'prop-types';
 import { deleteLog } from "../../actions/logActions";
 
 const LogItem = ({ log, deleteLog }) => {
+
+  const onDelete = () => {
+    deleteLog(log.id);
+  };
+
   return (
     <li className="collection-item">
       <div>
@@ -17,7 +22,7 @@ const LogItem = ({ log, deleteLog }) => {
           on{' '} 
           <Moment format='MMMM Do YYYY, h:mm:ss a'>{log.date}</Moment>
         </span>
-        <a href="#!" className="secondary-content">
+        <a href="#!" onClick={onDelete} className="secondary-content">
           <i className="material-icons grey-text">Delete</i>
         </a>
       </div>
