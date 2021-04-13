@@ -24,12 +24,19 @@ const TechListModal = () => {
     setLoading(false);
   };
 
-  if(loading) {
-    return <Preloader />
-  }
-
   return (
-    
+    // Coming from href in AddBtn.jsx
+    <div id="tech-list-modal" className="modal" >
+      <div className="modal-content">
+        <h4>Technician List</h4>
+        <ul className="collection">
+          {/* When the loading is done, map through techs: */}
+          {!loading && techs.map(tech => (
+            <li className="collection-item">{tech.firstName}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
   )
 }
 
