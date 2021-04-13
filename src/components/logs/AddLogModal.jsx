@@ -1,6 +1,6 @@
 // This is gonna be a form so we'll have some component level state
 import React, { useState } from 'react';
-import M from 'materialize-css/dist/js/materialize.min.js';
+import M from 'materialize-css/dist/js/materialize.min.js'; // For alert
 
 const AddLogModal = () => {
 
