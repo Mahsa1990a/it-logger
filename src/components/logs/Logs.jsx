@@ -29,7 +29,7 @@ const Logs = ({ log: { logs, loading } }) => {
   //   setLoading(false);
   // };
 
-  if(loading) {
+  if(loading || logs === null) {
     return <Preloader />
   }
 
