@@ -1,6 +1,7 @@
 //useState: because we're gonna store the logs in our component level state and later we'll move it to redux
 // useEffect: we wanna be able to make our request
 import React, { useState, useEffect } from 'react'; 
+import { connect } from 'react-redux'; //whenever you need to interact with redux you need to import connect
 import LogItem from "./LogItem";
 import Preloader from '../layout/Preloader';
 
@@ -46,4 +47,5 @@ const Logs = () => {
   )
 }
 
-export default Logs;
+// export default Logs; when you have connect, you should export like this:
+export default connect()(Logs);
