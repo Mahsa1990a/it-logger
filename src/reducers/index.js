@@ -2,6 +2,6 @@
 import { combineReducers } from 'redux';
 import logReducer from './logReducer';
 
-export default combineReducers({ // It takes an Object with all reducers
+export default combineReducers({  // It takes an Object with all reducers
   log: logReducer
 });
