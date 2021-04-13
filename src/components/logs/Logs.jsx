@@ -5,7 +5,7 @@ import { connect } from 'react-redux'; //whenever you need to interact with redu
 import LogItem from "./LogItem";
 import Preloader from '../layout/Preloader';
 
-const Logs = () => {
+const Logs = ({ log: { logs, loading } }) => {
 
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -44,8 +44,14 @@ const Logs = () => {
         (logs.map(log => <LogItem key={log.id} log={log}/>))
       }
     </ul>
-  )
-}
+  );
+};
+
+// If you want to get anything from app level state and bring it into the component, you bring it as a prop
+const mapStateToProps = state => ({
+  // Describe what we are gonna get from state:
+  log: state.log //second log is coming from name of reducers-> index-> log:
+});
 
 // export default Logs; when you have connect, you should export like this:
-export default connect()(Logs);
+export default connect(mapStateToProps)(Logs);
