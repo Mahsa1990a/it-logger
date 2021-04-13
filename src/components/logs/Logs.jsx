@@ -1,32 +1,33 @@
 //useState: because we're gonna store the logs in our component level state and later we'll move it to redux
 // useEffect: we wanna be able to make our request
-import React, { useState, useEffect } from 'react'; 
+import React, { useEffect } from 'react'; 
 import { connect } from 'react-redux'; //whenever you need to interact with redux you need to import connect
 import LogItem from "./LogItem";
 import Preloader from '../layout/Preloader';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { getLogs } from "../../actions/logActions";
 
 const Logs = ({ log: { logs, loading } }) => {
 
-  const [logs, setLogs] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [logs, setLogs] = useState([]);
+  // const [loading, setLoading] = useState(false); these 2 are coming from app level state so we dont need them anymore
 
   useEffect(() => { // Using useEffect for calling getLogs() once after loading App
     getLogs();
     // eslint-disable-next-line
   }, []); // We only want to run them once so => []
 
-  const getLogs = async () => {
-    setLoading(true);
-    // Make a request from backend(using fetch instead of axios):
-    const res = await fetch('http://localhost:5000/logs'); //fetch returns a promiss // becuase we added proxy we dont need to say http://localhost:5000/logs
-    // Id doesnt return data right away, we have to format it as json:
-    const data = await res.json();
-    console.log("data", data);
+  // const getLogs = async () => {
+  //   setLoading(true);
+  //   // Make a request from backend(using fetch instead of axios):
+  //   const res = await fetch('http://localhost:5000/logs'); //fetch returns a promiss // becuase we added proxy we dont need to say http://localhost:5000/logs
+  //   // Id doesnt return data right away, we have to format it as json:
+  //   const data = await res.json();
+  //   console.log("data", data);
 
-    setLogs(data); // Set the logs to data //store "logs" from db.json to state
-    setLoading(false);
-  };
+  //   setLogs(data); // Set the logs to data //store "logs" from db.json to state
+  //   setLoading(false);
+  // };
 
   if(loading) {
     return <Preloader />
@@ -59,4 +60,4 @@ const mapStateToProps = state => ({
 });
 
 // export default Logs; when you have connect, you should export like this:
-export default connect(mapStateToProps)(Logs);
+export default connect(mapStateToProps, { getLogs })(Logs);
