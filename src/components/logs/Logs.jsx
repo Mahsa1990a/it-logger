@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'; //whenever you need to interact with redux you need to import connect
 import LogItem from "./LogItem";
 import Preloader from '../layout/Preloader';
+import PropTypes from 'prop-types'
 
 const Logs = ({ log: { logs, loading } }) => {
 
@@ -46,6 +47,10 @@ const Logs = ({ log: { logs, loading } }) => {
     </ul>
   );
 };
+
+Logs.propTypes = {
+  log: PropTypes.object.isRequired
+}
 
 // If you want to get anything from app level state and bring it into the component, you bring it as a prop
 const mapStateToProps = state => ({
