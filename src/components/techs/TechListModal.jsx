@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 const TechListModal = () => {
 
-  const [techs, setTechs] = useState('');
+  const [techs, setTechs] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => { // Using useEffect for calling getLogs() once after loading App
