@@ -71,6 +71,10 @@ const AddLogModal = ({ addLog }) => {
   )
 };
 
+AddLogModal.propTypes = {
+  addLog: PropTypes.func.isRequired
+}
+
 const modalStyle = {
   width: '75%',
   height: '75%'
