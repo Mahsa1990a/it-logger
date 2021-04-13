@@ -6,7 +6,7 @@ import { addLog } from "../../actions/logActions";
 
 import M from 'materialize-css/dist/js/materialize.min.js'; // For alert
 
-const AddLogModal = () => {
+const AddLogModal = ({ addLog }) => {
 
   const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
@@ -76,4 +76,4 @@ const modalStyle = {
   height: '75%'
 };
 
-export default AddLogModal;
+export default connect(null, { addLog })(AddLogModal);
