@@ -12,12 +12,14 @@ const AddLogModal = () => {
     <div id='add-log-modal' className="modal" style={modalStyle}>
       <div className="modal-content">
         <h4>Enter System Log</h4>
+
         <div className="row">
           <div className="input-field">
             <input type="text" name="message" value={message} onChange={e => setMessage(e.target.value)} />
             <label htmlFor="message" className="active">Log Message</label>
           </div>
         </div>
+
         <div className="row">
           <div className="input-field">
             <select name="tech" value={tech} className="browser-default" onChange={e => setTech(e.target.value)} >
@@ -28,6 +30,17 @@ const AddLogModal = () => {
               <option value="Sam Smith">Sam Smith</option>
               <option value="Sara Wilson">Sara Wilson</option>
             </select>
+          </div>
+        </div>
+        {/* Checkbox for attention: */}
+        <div className="row">
+          <div className="input-field">
+            <p>
+              <label>
+                <input type="checkbox" className="filled-in" checked={attention} value={attention} onChange={e => setAttention(!attention)} />
+                <span>Needs Attention</span>
+              </label>
+            </p>
           </div>
         </div>
       </div>
