@@ -1,8 +1,11 @@
 // This is gonna be a form so we'll have some component level state
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import M from 'materialize-css/dist/js/materialize.min.js'; // For alert
+import { updateLog } from "../../actions/logActions";
 
-const EditLogModal = () => {
+const EditLogModal = ({ current, updateLog }) => {
 
   const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
@@ -72,4 +75,13 @@ const modalStyle = {
   height: '75%'
 };
 
-export default EditLogModal;
+EditLogModal.propTypes = {
+  current: PropTypes.object,
+  updateLog: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  current: state.log.current
+});
+
+export default connect(mapStateToProps, { updateLog })(EditLogModal);
