@@ -7,7 +7,7 @@ import Preloader from '../layout/Preloader';
 import PropTypes from 'prop-types';
 import { getLogs } from "../../actions/logActions";
 
-const Logs = ({ log: { logs, loading } }) => {
+const Logs = ({ log: { logs, loading }, getLogs }) => {
 
   // const [logs, setLogs] = useState([]);
   // const [loading, setLoading] = useState(false); these 2 are coming from app level state so we dont need them anymore
