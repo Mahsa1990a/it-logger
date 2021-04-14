@@ -6,10 +6,11 @@ import PropTypes from 'prop-types';
 import TechItem from "./TechItem";
 import { getTechs } from '../../actions/techActions';
 
-const TechListModal = ({ getTechs }) => {
+const TechListModal = ({ getTechs, tech: { techs, loading } }) => {
 
-  const [techs, setTechs] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [techs, setTechs] = useState([]);
+  // const [loading, setLoading] = useState(false); 
+  // ** we are not useing techs or loading as component level state, we are using them as app level state and passing them as props(line9)
 
   useEffect(() => { // Using useEffect for calling getLogs() once after loading App
     getTechs();
