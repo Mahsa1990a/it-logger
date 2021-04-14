@@ -1,5 +1,7 @@
 // This is gonna be a form so we'll have some component level state
 import React, { useState, useEffect } from 'react';
+import TechSelectOptions from '../techs/TechSelectOptions';
+
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import M from 'materialize-css/dist/js/materialize.min.js'; // For alert
@@ -63,9 +65,10 @@ const EditLogModal = ({ current, updateLog }) => {
               <option value="" disabled>
                 Select Technician
               </option>
-              <option value="John Doe">John Doe</option>
+              {/* <option value="John Doe">John Doe</option>
               <option value="Sam Smith">Sam Smith</option>
-              <option value="Sara Wilson">Sara Wilson</option>
+              <option value="Sara Wilson">Sara Wilson</option>    REPLACE THESE 3 With: */}
+              <TechSelectOptions />
             </select>
           </div>
         </div>
