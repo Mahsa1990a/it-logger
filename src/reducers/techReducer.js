@@ -22,7 +22,15 @@ export default (state = initialState, action) => {
     case ADD_TECH: 
       return {
         ...state,
-        techs: [...state.techs, action.payload]
+        techs: [...state.techs, action.payload],
+        loading: false
+      };
+    case TECHS_ERROR: 
+    console.error(action.payload);
+      return {
+        ...state,
+        error: action.payload,
+        loading: false
       };
 
     default:
