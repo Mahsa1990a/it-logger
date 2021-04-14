@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import { addLog } from "../../actions/logActions";
+import TechSelectOptions from '../techs/TechSelectOptions';
 
 import M from 'materialize-css/dist/js/materialize.min.js'; // For alert
 
@@ -55,9 +56,10 @@ const AddLogModal = ({ addLog }) => {
               <option value="" disabled>
                 Select Technician
               </option>
-              <option value="John Doe">John Doe</option>
+              {/* <option value="John Doe">John Doe</option>
               <option value="Sam Smith">Sam Smith</option>
-              <option value="Sara Wilson">Sara Wilson</option>
+              <option value="Sara Wilson">Sara Wilson</option>    REPLACE THESE 3 With: */}
+              <TechSelectOptions />
             </select>
           </div>
         </div>
