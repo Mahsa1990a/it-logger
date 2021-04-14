@@ -11,9 +11,9 @@ const TechSelectOptions = ({ getTechs, tech: { techs, loading } }) => {
   }, []); //We only want to run it when component mounts so []
 
   return (
-    <div>
-      
-    </div>
+    !loading && techs !== null && techs.map(t => 
+      <option key={t.id} value={`${t.firstName} ${t.lastName}`}>{t.firstName} {t.lastName}</option>
+    )
   );
 };
 
