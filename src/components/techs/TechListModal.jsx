@@ -16,17 +16,17 @@ const TechListModal = ({ getTechs }) => {
     // eslint-disable-next-line
   }, []); // We only want to run them once so => []
 
-  const getTechs = async () => {
-    setLoading(true);
-    // Make a request from backend(using fetch instead of axios):
-    const res = await fetch('http://localhost:5000/techs');
-    // Id doesnt return data right away, we have to format it as json:
-    const data = await res.json();
-    console.log("data", data);
+  // const getTechs = async () => {        W***** We don't need it anymore because we are calling getTechs from action
+  //   setLoading(true);
+  //   // Make a request from backend(using fetch instead of axios):
+  //   const res = await fetch('http://localhost:5000/techs');
+  //   // Id doesnt return data right away, we have to format it as json:
+  //   const data = await res.json();
+  //   console.log("data", data);
 
-    setTechs(data); // Set the logs to data //store "logs" from db.json to state
-    setLoading(false);
-  };
+  //   setTechs(data); // Set the logs to data //store "logs" from db.json to state
+  //   setLoading(false);
+  // };
 
   return (
     // Coming from href in AddBtn.jsx
