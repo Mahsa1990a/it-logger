@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import M from 'materialize-css/dist/js/materialize.min.js'; // For alert
 
-const AddTechModal = () => {
+const AddTechModal = ({ addTech }) => {
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -53,4 +53,8 @@ const AddTechModal = () => {
   )
 };
 
-export default AddTechModal;
+AddTechModal.propTypes = {
+  addTech: PropTypes.func.isRequired
+}
+
+export default connect(null, { addTech })(AddTechModal);
