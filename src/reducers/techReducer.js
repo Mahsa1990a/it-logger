@@ -13,6 +13,12 @@ export default (state = initialState, action) => {
         ...state,
         loading: true
       };
+    case GET_TECHS:
+      return {
+        ...state,
+        techs: action.payload,
+        loading: false
+      };
 
     default:
       return state;
