@@ -1,5 +1,9 @@
 // This is gonna be a form so we'll have some component level state
 import React, { useState } from 'react';
+import { addTech } from '../../actions/techActions';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import M from 'materialize-css/dist/js/materialize.min.js'; // For alert
 
 const AddTechModal = () => {
