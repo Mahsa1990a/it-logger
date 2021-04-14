@@ -14,9 +14,15 @@ const AddTechModal = ({ addTech }) => {
   const onSubmit = () => {
     // Error checking:
     if(firstName === '' || lastName === '') {
-      M.toast({ html: 'Please enter the first and last name' })
+      M.toast({ html: 'Please enter the first and last name' });
     } else {
-      console.log(firstName, lastName);
+      // console.log(firstName, lastName);
+      addTech({
+        firstName,
+        lastName
+      });
+
+      M.toast({ html: `${firstName} ${lastName} was added as a Technician!` });
       
       // Clear fields:
       setFirstName('');
