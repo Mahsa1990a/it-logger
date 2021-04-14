@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { searchLogs } from '../../actions/logActions';
 
-const Searchbar = () => {
+const Searchbar = ({ searchLogs }) => {
   return (
     <nav style={{ marginBottom: '30px' }} className="blue" >
       <div className="nav-wrapper">
@@ -14,6 +17,10 @@ const Searchbar = () => {
       </div>
     </nav>
   )
+};
+
+Searchbar.propTypes = {
+  searchLogs: PropTypes.func.isRequired,
 }
 
-export default Searchbar;
+export default connect(null, { searchLogs })(Searchbar); //we're not getting anything from state => so it'll be null
