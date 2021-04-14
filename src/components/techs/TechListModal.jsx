@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import TechItem from "./TechItem";
 import { getTechs } from '../../actions/techActions';
 
-const TechListModal = () => {
+const TechListModal = ({ getTechs }) => {
 
   const [techs, setTechs] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -41,7 +41,16 @@ const TechListModal = () => {
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TechListModal;
+TechListModal.propTypes = {
+  tech: PropTypes.object.isRequired,
+  getTechs: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  tech: state.tech
+});
+
+export default connect(mapStateToProps, { getTechs })(TechListModal);
