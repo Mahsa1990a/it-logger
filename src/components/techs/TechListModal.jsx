@@ -1,7 +1,10 @@
 //useState: because we're gonna store the logs in our component level state and later we'll move it to redux
 // useEffect: we wanna be able to make our request
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import TechItem from "./TechItem";
+import { getTechs } from '../../actions/techActions';
 
 const TechListModal = () => {
 
