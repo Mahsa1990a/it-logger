@@ -6,7 +6,7 @@
 
 ### Homepage
 
-!["Home page"](https://github.com/Mahsa1990a/it-logger/blob/main/public/screenshots/Home%20it.png?raw=true)
+!["Homepage"](https://github.com/Mahsa1990a/it-logger/blob/main/public/screenshots/Home%20it.png?raw=true)
 
 ### Add New Log
 
