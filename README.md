@@ -34,7 +34,7 @@
 - Redux State Management
 - Actions and Reducers
 - React-Redux
-- Materialize UI (Modals, Toasts, etc)
+- Materialize UI(Modals, Toasts, etc)
 - JavaScript Widget
 
 ## Usage
